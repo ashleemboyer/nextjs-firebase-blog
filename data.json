@@ -1,0 +1,20 @@
+{
+  "posts": {
+    "my-first-blog-post": {
+      "content": "Cupcake ipsum dolor sit amet carrot cake. Sweet tootsie roll marzipan jelly-o cake cotton candy pie. Jelly-o powder tootsie roll. Toffee gummi bears muffin powder caramels dragée soufflé. Halvah gummies gingerbread jelly jujubes. Sweet toffee lollipop chocolate cake.",
+      "coverImage": "http://placekitten.com/g/700/400",
+      "coverImageAlt": "A random kitten from PlaceKitten.com",
+      "dateCreated": 1609718400000,
+      "slug": "my-first-blog-post",
+      "title": "My First Blog Post"
+    },
+    "my-second-blog-post": {
+      "content": "Cupcake ipsum dolor sit amet carrot cake. Sweet tootsie roll marzipan jelly-o cake cotton candy pie. Jelly-o powder tootsie roll. Toffee gummi bears muffin powder caramels dragée soufflé. Halvah gummies gingerbread jelly jujubes. Sweet toffee lollipop chocolate cake.",
+      "coverImage": "http://placekitten.com/g/700/500",
+      "coverImageAlt": "A random kitten from PlaceKitten.com",
+      "dateCreated": 1609459200000,
+      "slug": "my-second-blog-post",
+      "title": "My Second Blog Post"
+    }
+  }
+}
