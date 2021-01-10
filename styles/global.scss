@@ -7,3 +7,33 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input,
+textarea {
+  padding: 4px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #1a73e8;
+  border: 1px solid #1a73e8;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
