@@ -1,0 +1,29 @@
+.CreatePage {
+  padding: 24px;
+
+  form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px;
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    input {
+      margin-bottom: 16px;
+    }
+
+    textarea {
+      height: 300px;
+    }
+
+    button {
+      display: block;
+      margin-right: 0;
+      margin-left: auto;
+      margin-top: 24px;
+    }
+  }
+}
