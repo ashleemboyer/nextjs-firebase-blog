@@ -22,7 +22,7 @@ const CreatePage = () => {
   }
 
   if (!user) {
-    router.push('/404');
+    router.push('/signin');
     return null;
   }
 
