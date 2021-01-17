@@ -1,0 +1,23 @@
+.Layout {
+  nav {
+    padding: 24px;
+    background-color: #1a73e8;
+
+    span {
+      a {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 24px;
+  }
+}
