@@ -3,8 +3,13 @@
 // icon library. You can read more about this in the Next.js docs at:
 // https://nextjs.org/docs/advanced-features/custom-app
 
+import { AuthProvider } from '@contexts/auth';
 import '@styles/global.scss';
 
-const App = ({ Component, pageProps }) => <Component {...pageProps} />;
+const App = ({ Component, pageProps }) => (
+  <AuthProvider>
+    <Component {...pageProps} />
+  </AuthProvider>
+);
 
 export default App;
