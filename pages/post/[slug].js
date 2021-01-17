@@ -1,15 +1,24 @@
-import { useRouter } from 'next/router';
+import { getPostBySlug } from '@lib/firebase';
+import { getFormattedDate } from '@lib/utils';
 import styles from '@styles/post.module.scss';
 
-const PostPage = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+const PostPage = ({ post }) => (
+  <div className={styles.PostPage}>
+    <img src={post.coverImage} alt={post.coverImageAlt} />
+    <h1>{post.title}</h1>
+    <span>Published {getFormattedDate(post.dateCreated)}</span>
+    <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
+  </div>
+);
 
-  return (
-    <div className={styles.PostPage}>
-      <h1>Hello, from post: {slug}!</h1>
-    </div>
-  );
-};
+export async function getServerSideProps(context) {
+  const post = await getPostBySlug(context.query.slug);
+
+  return {
+    props: {
+      post,
+    },
+  };
+}
 
 export default PostPage;
