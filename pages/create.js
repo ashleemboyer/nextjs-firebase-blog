@@ -21,7 +21,7 @@ const CreatePage = () => {
     return null;
   }
 
-  if (!user) {
+  if (!user && typeof window !== 'undefined') {
     router.push('/signin');
     return null;
   }
