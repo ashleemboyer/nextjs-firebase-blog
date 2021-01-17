@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router'; // this is new
-import { createPost } from '@lib/firebase'; // this is new
+import { useRouter } from 'next/router';
+import { createPost } from '@lib/firebase';
+import { Layout } from '@components';
 import styles from '@styles/create.module.scss';
 
 const CreatePage = () => {
-  const router = useRouter(); // this is new
+  const router = useRouter();
   const [formValues, setFormValues] = useState({
     title: '',
     slug: '',
@@ -12,7 +13,7 @@ const CreatePage = () => {
     coverImageAlt: '',
     content: '',
   });
-  const [isLoading, setIsLoading] = useState(false); // this is new
+  const [isLoading, setIsLoading] = useState(false);
 
   /*
   This is the function we're passing to each control so we can capture
@@ -70,58 +71,60 @@ const CreatePage = () => {
   };
 
   return (
-    <div className={styles.CreatePage}>
-      <form onSubmit={handleSubmit}>
-        <h1>Create a new post</h1>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input
-            id="title"
-            type="text"
-            value={formValues.title}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="slug">Slug</label>
-          <input
-            id="slug"
-            type="text"
-            value={formValues.slug}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="coverImage">Cover Image URL</label>
-          <input
-            id="coverImage"
-            type="text"
-            value={formValues.coverImage}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="coverImageAlt">Cover Image Alt</label>
-          <input
-            id="coverImageAlt"
-            type="text"
-            value={formValues.coverImageAlt}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="content">Content</label>
-          <textarea
-            id="content"
-            value={formValues.content}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? 'Creating...' : 'Create'}
-        </button>
-      </form>
-    </div>
+    <Layout>
+      <div className={styles.CreatePage}>
+        <form onSubmit={handleSubmit}>
+          <h1>Create a new post</h1>
+          <div>
+            <label htmlFor="title">Title</label>
+            <input
+              id="title"
+              type="text"
+              value={formValues.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="slug">Slug</label>
+            <input
+              id="slug"
+              type="text"
+              value={formValues.slug}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="coverImage">Cover Image URL</label>
+            <input
+              id="coverImage"
+              type="text"
+              value={formValues.coverImage}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="coverImageAlt">Cover Image Alt</label>
+            <input
+              id="coverImageAlt"
+              type="text"
+              value={formValues.coverImageAlt}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="content">Content</label>
+            <textarea
+              id="content"
+              value={formValues.content}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? 'Creating...' : 'Create'}
+          </button>
+        </form>
+      </div>
+    </Layout>
   );
 };
 
