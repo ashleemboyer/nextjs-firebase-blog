@@ -1,0 +1,41 @@
+.PostPage {
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid black;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    h1 {
+      margin: 0;
+    }
+
+    span {
+      display: flex;
+      margin: 0;
+
+      a {
+        display: block;
+        padding: 8px;
+        color: black;
+      }
+
+      button {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        color: black;
+      }
+    }
+  }
+
+  span {
+    margin-bottom: 16px;
+  }
+}
