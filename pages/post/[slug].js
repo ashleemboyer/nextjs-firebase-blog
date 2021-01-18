@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
 import { getPostBySlug } from '@lib/firebase';
 import { getFormattedDate } from '@lib/utils';
-import { Layout } from '@components';
+import { useAuth } from '@contexts/auth';
+import { Icon, Layout } from '@components';
 import styles from '@styles/post.module.scss';
 
 const PostPage = ({ post }) => {
   const router = useRouter();
+  const [user] = useAuth();
 
   if (!post && typeof window !== 'undefined') {
     router.push('/404');
@@ -20,7 +22,14 @@ const PostPage = ({ post }) => {
     <Layout>
       <div className={styles.PostPage}>
         <img src={post.coverImage} alt={post.coverImageAlt} />
-        <h1>{post.title}</h1>
+        <div>
+          <h1>{post.title}</h1>
+          {user && (
+            <a href={`/edit/${post.slug}`}>
+              <Icon name="pencil-alt" />
+            </a>
+          )}
+        </div>
         <span>Published {getFormattedDate(post.dateCreated)}</span>
         <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
       </div>
