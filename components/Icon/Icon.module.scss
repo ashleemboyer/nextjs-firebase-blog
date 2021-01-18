@@ -1,0 +1,21 @@
+$icon-small: 1rem;
+$icon-medium: 1.5rem;
+$icon-large: 2rem;
+
+.Icon {
+  width: $icon-medium;
+  height: $icon-medium;
+  font-size: $icon-medium;
+
+  &--small {
+    width: $icon-small;
+    height: $icon-small;
+    font-size: $icon-small;
+  }
+
+  &--large {
+    width: $icon-large;
+    height: $icon-large;
+    font-size: $icon-large;
+  }
+}
