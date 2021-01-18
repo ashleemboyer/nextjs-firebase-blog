@@ -25,9 +25,25 @@ const PostPage = ({ post }) => {
         <div>
           <h1>{post.title}</h1>
           {user && (
-            <a href={`/edit/${post.slug}`}>
-              <Icon name="pencil-alt" />
-            </a>
+            <span>
+              <a href={`/edit/${post.slug}`}>
+                <Icon name="pencil-alt" />
+              </a>
+              <button
+                onClick={() => {
+                  const shouldDeletePost = confirm(
+                    'Are you sure you want to delete this post?',
+                  );
+                  if (shouldDeletePost) {
+                    deletePost(post.slug).then(() => {
+                      router.push('/');
+                    });
+                  }
+                }}
+              >
+                <Icon name="trash-alt" />
+              </button>
+            </span>
           )}
         </div>
         <span>Published {getFormattedDate(post.dateCreated)}</span>
