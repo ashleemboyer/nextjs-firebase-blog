@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { createPost } from '@lib/firebase';
+import { useAuth } from '@contexts/auth';
 import { Layout } from '@components';
 import styles from '@styles/create.module.scss';
 
@@ -14,6 +15,16 @@ const CreatePage = () => {
     content: '',
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [user, userLoading] = useAuth();
+
+  if (userLoading) {
+    return null;
+  }
+
+  if (!user && typeof window !== 'undefined') {
+    router.push('/404');
+    return null;
+  }
 
   /*
   This is the function we're passing to each control so we can capture
