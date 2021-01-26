@@ -1,0 +1,28 @@
+.SignIn {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 32px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(black, 0.3);
+
+  form {
+    h1 {
+      margin: 0;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    input {
+      margin-bottom: 16px;
+    }
+
+    button {
+      min-width: 120px;
+      display: block;
+      margin-top: 32px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
